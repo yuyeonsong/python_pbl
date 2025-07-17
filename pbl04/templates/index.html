@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FTP 파일 목록</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>FTP 서버 파일 목록</h1>
+    <p><strong>현재 디렉토리:</strong> {{ current_dir }}</p>
+
+    <ul>
+        {% if files %}
+            {% for file in files %}
+                <li>{{ file }}</li>
+            {% endfor %}
+        {% else %}
+            <li>표시할 파일이 없습니다.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
